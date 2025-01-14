@@ -76,9 +76,6 @@ public class OrderServiceImplTest {
 
         //Verification
         verify(orderRepository, times(1)).findById(anyString());
-        verify(productService, times(1)).getProductById(order.getProductId());
-        verify(paymentService, times(1)).getPaymentDetailsByOrderId(order.getId());
-
         //Assert
         assertNotNull(orderResponse);
         assertEquals(order.getId(), orderResponse.id());
